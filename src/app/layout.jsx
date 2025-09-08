@@ -1,4 +1,5 @@
 import "./globals.css";
+import Header from "./components/header";
 
 export const metadata = {
     title: "SportHub",
@@ -11,6 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html>
+            <Header />
             <body>{children}</body>
         </html>
     );
