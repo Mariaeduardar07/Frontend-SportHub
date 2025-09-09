@@ -13,7 +13,7 @@ export default function Header() {
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/sobre" className={styles.navLink}>
+            <Link href="/sobreAPI" className={styles.navLink}>
               Sobre a API
             </Link>
           </li>
