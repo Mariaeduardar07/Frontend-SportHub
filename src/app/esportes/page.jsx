@@ -3,6 +3,7 @@
 import { useState } from "react";
 import axios from "axios";
 import styles from "./esportes.module.css";
+import Image from "next/image";
 
 export default function page() {
     const [modalidades, setModalidades] = useState([]);
@@ -37,11 +38,17 @@ export default function page() {
                 </div>
             </div>
 
-            <div className={styles.grid}>
+            <div className={styles.cardContainer}>
                 {modalidades.map((modalidade) => (
                     <div key={modalidade.id} className={styles.card}>
                         <h3 className={styles.cardTitle}>{modalidade.name}</h3>
-                        <p className={styles.cardDescription}>{modalidade.image_url}</p>
+                       <Image
+                        src={modalidade.image_url}
+                        alt={modalidade.name}
+                        width={200}
+                        height={200}
+                        className={styles.cardImage}
+                       />
                     </div>
                 ))}
             </div>

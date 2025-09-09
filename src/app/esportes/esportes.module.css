@@ -42,38 +42,41 @@
     cursor: not-allowed;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    
 }
 
 @media (min-width: 768px) {
-    .grid {
+    .cardContainer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 1024px) {
-    .grid {
+    .cardContainer {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 .card {
-    background-color: white;
+    background-color: #26658c;
     padding: 1.5rem;
-    border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cardTitle {
     font-weight: 700;
     font-size: 1.125rem;
-    color: #1f2937;
+    color: #ffffff;
     margin-bottom: 0.5rem;
 }
 
 .cardDescription {
-    color: #6b7280;
+    color: #ffffff;
 }

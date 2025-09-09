@@ -15,7 +15,7 @@ export default function SobreAPI() {
       <div className={style.listSection}>
         <h1 className={style.listTitle}>Endpoint escolhido</h1>
         <div className={style.featureList}>
-          <p>lalalalalalalala</p>
+          <p>/modalidades</p>
         </div>
       </div>
 
