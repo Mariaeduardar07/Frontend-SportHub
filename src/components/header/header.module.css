@@ -1,5 +1,5 @@
 .header {
-  background-color: #f8f9fa;
+  background: linear-gradient(to border-left, #f8f9fa 0%, #1a3d60 100%);
   color: white;
   padding: 20px 7rem;
   display: flex;

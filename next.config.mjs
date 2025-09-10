@@ -9,19 +9,63 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.gymnastics.sport',
+        hostname: 'static.vecteezy.com',
         pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'img.olympicchannel.com',
+        hostname: 'www.menin.com.br',
         pathname: '/**',
       },
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '5000',
+        protocol: 'https',
+        hostname: 'www.sorting.com.br',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'diariodonordeste.verdesmares.com.br',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.gov.br',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.todamateria.com.br',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.cob.org.br',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'admin.cob.org.br',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.istockphoto.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.olympics.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'hojepr.com',
+        pathname: '/**',
+      },
+      // Configuração mais permissiva para imagens externas
+      {
+        protocol: 'https',
+        hostname: '**',
       },
     ],
   },
