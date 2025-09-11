@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +8,15 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #F8F9FA;
+  background: linear-gradient(90deg, #011c40 0%, #26658c 50%, #023859 100%);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+:root {
+  --corDoFundo: linear-gradient(90deg, #011c40 0%, #26658c 50%, #023859 100%);
+}
+
+header {
+  background: var(--corDoFundo);
 }

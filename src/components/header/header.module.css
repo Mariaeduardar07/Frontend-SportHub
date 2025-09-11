@@ -1,6 +1,5 @@
 .header {
-  background: linear-gradient(to border-left, #f8f9fa 0%, #1a3d60 100%);
-  color: white;
+  color: #f8f9fa;
   padding: 20px 7rem;
   display: flex;
   justify-content: space-between;
@@ -11,7 +10,7 @@
 .title {
   font-size: 2rem;
   margin: 0;
-  color: #011c40;
+  color: #f8f9fa;
 }
 
 .nav {
@@ -29,7 +28,7 @@
 }
 
 .navLink {
-  color: #011c40;
+  color: #f8f9fa;
   text-decoration: none;
   transition: all 0.3s;
   padding: 10px 0;
@@ -38,12 +37,12 @@
 }
 
 .navLink:hover {
-  color: #26658c;
-  border-bottom-color: #26658c;
+  color: gray;
+  border-bottom-color: gray;
 }
 
 .navLink.active {
-  color: #26658c;
-  border-bottom-color: #26658c;
+  color: #f8f9fa;
+  border-bottom-color: #f8f9fa;
   font-weight: 600;
 }

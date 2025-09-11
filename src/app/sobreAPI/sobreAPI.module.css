@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #f8f9fa;
+    background-color: var(--corDoFundo);
     align-items: center;
     justify-content: center;
     padding: 2rem 7rem;
@@ -12,11 +12,12 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    color: #f8f9fa;
 }
 
 .title {
     font-size: 3.5rem;
-    color: #011C40;
+    color: #f8f9fa;
     margin-bottom: 1.5rem;
     font-weight: 700;
 }
@@ -25,7 +26,7 @@
     font-size: 1.3rem;
     width: 50%;
     text-align: justify ;
-    color: #555;
+    color: #f8f9fa;
     line-height: 1.8;
     margin-bottom: 2rem;
 }
@@ -40,7 +41,7 @@
 
 .listTitle {
     font-size: 2.5rem;
-    color: #011C40;
+    color: #f8f9fa;
     margin-bottom: 1rem;
     margin-top: 2rem;
     font-weight: 600;
@@ -55,7 +56,7 @@
 
 .listItem {
     font-size: 1.1rem;
-    color: #555;
+    color: #f8f9fa;
     margin-bottom: 0.8rem;
     padding: 0.5rem 0;
     border-bottom: 1px solid #e2e8f0;
