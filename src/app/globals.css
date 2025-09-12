@@ -8,15 +8,15 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(90deg, #011c40 0%, #26658c 50%, #023859 100%);
+  background: #e9e9e9;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
 }
 
 :root {
-  --corDoFundo: linear-gradient(90deg, #011c40 0%, #26658c 50%, #023859 100%);
+  --corDoFundo: #e9e9e9;
 }
 
 header {
-  background: var(--corDoFundo);
+  background: var(--corDoFundo)
 }

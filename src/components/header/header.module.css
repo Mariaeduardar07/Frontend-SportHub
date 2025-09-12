@@ -10,7 +10,7 @@
 .title {
   font-size: 2rem;
   margin: 0;
-  color: #f8f9fa;
+  color: #011c40;
 }
 
 .nav {
@@ -28,7 +28,7 @@
 }
 
 .navLink {
-  color: #f8f9fa;
+  color: #011c40;
   text-decoration: none;
   transition: all 0.3s;
   padding: 10px 0;
@@ -37,12 +37,12 @@
 }
 
 .navLink:hover {
-  color: gray;
-  border-bottom-color: gray;
+  color: #011c40;
+  border-bottom-color: #011c40;
 }
 
 .navLink.active {
-  color: #f8f9fa;
-  border-bottom-color: #f8f9fa;
+  color: #011c40;
+  border-bottom-color: #011c40;
   font-weight: 600;
 }

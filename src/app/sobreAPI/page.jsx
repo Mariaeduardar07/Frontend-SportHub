@@ -1,8 +1,16 @@
+import Banner from "@/components/banner";
 import style from "./sobreAPI.module.css";
 
 export default function SobreAPI() {
   return (
     <div className={style.container}>
+      <Banner 
+        mainCardTitle="CONHEÇA A API"
+        mainCardDescription="Descubra nossa API de esportes com informações completas sobre modalidades, regras, equipamentos e muito mais. Acesse dados detalhados e atualizados para seus projetos."
+        mainCardButton="EXPLORAR AGORA"
+        mainCardImage="https://cdn.abo.media/upload/article/dfm2hvspmhg3g6eqelre.jpg"
+        mainCardImageAlt="Bola de futebol no campo"
+      />
       <div className={style.textSection}>
         <h1 className={style.title}>SportsAPI</h1>
         <p className={style.description}>
