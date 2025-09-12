@@ -3,24 +3,3 @@
   background-color: #e9e9e9;
 }
 
-.containerNotFound {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-  color: #010f2e;
-}
-
-.btnInicio {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #010f2e;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  text-decoration: none;
-}

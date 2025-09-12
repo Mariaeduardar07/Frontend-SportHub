@@ -14,7 +14,10 @@ const MainCardSection = ({
         <h2 className={styles.mainCardTitle}>{mainCardTitle}</h2>
         <p className={styles.mainCardDescription}>{mainCardDescription}</p>
         <div className={styles.buttonContainer}>
-            <button className={styles.mainCardButton}>{mainCardButton} <ChevronRight size={13} color="#3574bb" strokeWidth={3} /></button>
+            <button className={styles.mainCardButton}>
+              {mainCardButton} 
+              <ChevronRight size={16} strokeWidth={2} />
+            </button>
         </div> 
       </div>
       <div className={styles.mainCardImageContainer}>

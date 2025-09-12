@@ -1,19 +1,20 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, Spin, Pagination } from "antd";
+import { Spin, Pagination } from "antd";
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import { ArrowRight, Trophy, Users, MapPin } from "lucide-react";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./esportes.module.css";
 
-export default function UsersPage() {
+export default function EsportesPage() {
   const [modalidades, setModalidades] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(5);
+  const [pageSize, setPageSize] = useState(6);
   const [imageErrors, setImageErrors] = useState(new Set());
 
   // Função para buscar todos os usuários
@@ -73,31 +74,34 @@ export default function UsersPage() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Lista de Modalidades</h1>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Descubra o Mundo dos Esportes</h1>
+        <p className={styles.subtitle}>
+          Explore nossa coleção completa de modalidades esportivas com informações detalhadas, 
+          regras e curiosidades sobre cada esporte.
+        </p>
+      </div>
 
       {loading ? (
-        // Tela de carregamento
         <div className={styles.loadingWrapper}>
           <Spin size="large" />
           <p className={styles.loadingText}>Carregando modalidades...</p>
         </div>
       ) : (
         <>
-          {/* Controles de paginação */}
           <div className={styles.controlsWrapper}>
             <Pagination
               total={modalidades.length}
-              showTotal={(total) => `Total ${total} modalidades`}
+              showTotal={(total) => `${total} modalidades encontradas`}
               pageSize={pageSize}
               current={currentPage}
               showSizeChanger={true}
-              pageSizeOptions={["5", "10", "20"]}
+              pageSizeOptions={["6", "12", "18", "24"]}
               onChange={handlePageChange}
               onShowSizeChange={handlePageSizeChange}
             />
           </div>
 
-          {/* Lista de modalidades em cards */}
           <div className={styles.cardsContainer}>
             {currentModalidades.map((modalidade) => (
               <Link
@@ -105,52 +109,60 @@ export default function UsersPage() {
                 href={`/esportes/${modalidade.id}`}
                 className={styles.cardLink}
               >
-                <Card className={styles.userCard} hoverable>
+                <div className={styles.userCard}>
                   <div className={styles.cardContent}>
-                    {/* Informações da modalidade */}
+                    <div className={styles.imageSection}>
+                      {isValidImageUrl(modalidade.image_url) && !imageErrors.has(modalidade.id) ? (
+                        <Image
+                          src={modalidade.image_url}
+                          alt={modalidade.name}
+                          fill
+                          className={styles.cardImage}
+                          onError={() => handleImageError(modalidade.id)}
+                        />
+                      ) : (
+                        <div className={styles.imagePlaceholder}>
+                          <div className={styles.icon}>🏅</div>
+                          <span>Imagem não disponível</span>
+                        </div>
+                      )}
+                    </div>
+                    
                     <h3 className={styles.userName}>{modalidade.name}</h3>
-                    {isValidImageUrl(modalidade.image_url) && !imageErrors.has(modalidade.id) ? (
-                      <Image
-                        src={modalidade.image_url}
-                        alt={modalidade.name}
-                        width={400}
-                        height={300}
-                        className={styles.image}
-                        style={{
-                          width: "100%",
-                          height: "180px",
-                          objectFit: "cover",
-                          borderRadius: "8px",
-                        }}
-                        onError={() => handleImageError(modalidade.id)}
-                      />
-                    ) : (
-                      <div 
-                        className={styles.imagePlaceholder}
-                        style={{
-                          width: "100%",
-                          height: "180px",
-                          backgroundColor: "#f0f0f0",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          borderRadius: "8px",
-                          color: "#666",
-                          fontSize: "14px"
-                        }}
-                      >
-                        📷 Imagem não disponível
-                      </div>
-                    )}
+                    
+                    <div className={styles.cardMeta}>
+                      {modalidade.type && (
+                        <span className={styles.badge}>
+                          <Users size={12} />
+                          {modalidade.type}
+                        </span>
+                      )}
+                      {modalidade.olympic && (
+                        <span className={styles.badge}>
+                          <Trophy size={12} />
+                          Olímpico
+                        </span>
+                      )}
+                      {modalidade.origin_country && (
+                        <span className={styles.badge}>
+                          <MapPin size={12} />
+                          {modalidade.origin_country}
+                        </span>
+                      )}
+                    </div>
+                    
+                    <button className={styles.viewButton}>
+                      Ver Detalhes
+                      <ArrowRight size={16} />
+                    </button>
                   </div>
-                </Card>
+                </div>
               </Link>
             ))}
           </div>
         </>
       )}
 
-      {/* Container para mostrar as notificações toast */}
       <ToastContainer
         position="top-right"
         autoClose={3500}
@@ -161,6 +173,7 @@ export default function UsersPage() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
+        theme="light"
       />
     </div>
   );
